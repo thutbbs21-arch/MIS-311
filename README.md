@@ -22,7 +22,7 @@ All major columns including ***gender, race_ethnicity, parental_level_of_educati
 
 Figure 1. Columns Selected for Duplicate Checking
 
-As shown in the process, ***3 duplicate rows*** were found and removed, resulting in ***199 unique*** observations. This step helps maintain data integrity and prevents double-counting, which could otherwise bias the statistical results and insights.
+As shown in the process,  with ***203 raw rows***, ***3 duplicate rows*** were found and removed, resulting in ***199 unique*** observations. This step helps maintain data integrity and prevents double-counting, which could otherwise bias the statistical results and insights.
 
 
 <img width="360" height="179" alt="image" src="https://github.com/user-attachments/assets/83d73646-5f7b-49b1-a604-8711ccb54980" />
@@ -42,7 +42,7 @@ Figure 3. Identifying Blank Values in Average Score Columns
 
 Figure 4: Identifying Blank Values in Parental Education Columns
 
-### 2.2.1. Fill Average Score
+### 2.2.1. Imputing Average Score
 
 For the variable ***average_score***, some missing values were found due to incomplete data entry. To maintain data consistency, the missing values were recalculated using Excel by dividing the total score by 3 (since each student’s total score represents the sum of three subjects: ***math, reading, and writing***).
 
@@ -52,10 +52,9 @@ The formula used was: <img width="300" height="150" alt="image" src="https://git
 
 Figure 5. Recalculating Missing Average Score Using Excel Formula
 
-As shown in Figure 5, this calculation ensured that each student record had a valid and consistent average score derived directly from their subject results.
-After this process, no missing values remained in the ***average_score*** column.
+This method was chosen because ***average_score*** is a derived variable that depends directly on existing subject scores. Recalculating missing values ensures accuracy and internal consistency, as it relies on already available, valid data rather than estimation or deletion. After this process, no missing values remained in the ***average_score*** column.
 
-### 2.2.2. Fill Parental Education
+### 2.2.2. Imputing Parental Education
 
 To determine appropriate values for the missing entries in the ***parental_level_of_education*** column, a PivotTable was created in Excel to analyze the frequency of each education level within each race/ethnicity group.
 
@@ -68,15 +67,15 @@ Figure 6. Selecting Data Range for PivotTable Creation in Excel
 In the PivotTable field settings:
 + ***Race_ethnicity*** was placed in the Rows area.
 + ***Parental_level_of_education*** was placed in the Columns area.
-+ The values area was set to Count of ***parental_level_of_education***.
++ The values area was set to ***Count of parental_level_of_education***.
 
 <img width="269" height="310" alt="image" src="https://github.com/user-attachments/assets/80936c1a-b3d3-49cf-bf57-1cc026e5cd3f" />
 
 Figure 7. PivotTable Field Settings for Analyzing Parental Education by Ethnicity
 
 The resulting PivotTable displayed the frequency of each education level across all ethnic groups. From this analysis, it was observed that:
-+ Group A had associate’s degree as the most common education level.
-+ Group D had some colleges as the most common education level.
++ **Group A** had associate’s degree as the most common education level.
++ **Group D** had some college as the most common education level.
 
 <img width="898" height="175" alt="image" src="https://github.com/user-attachments/assets/f3d80b7a-92d4-4c3e-b87f-9ffb3035862a" />
 
@@ -85,12 +84,17 @@ Figure 8. Frequency of Parental Education Levels by Race/Ethnicity Group
 Thus, the two missing values were imputed accordingly:
 + ***Group A → associate’s degree***
 + ***Group D → some college***
+
+This method was selected because This method was selected because ***parental_level_of_education*** is a categorical variable, making mode imputation the most suitable approach.
+Using the most frequent category within each ethnic group (conditional mode) preserves both the data’s distribution and the relationship between demographic variables, ensuring realistic and unbiased replacements.
+
 # 3.  Descriptive Statistics
 ## 3.1. Insight 1: Gender-Based Differences in Subject Performance
+> “Gender is coded 0/1 (dataset codebook does not specify mapping); analysis treats them as Group 0 and Group 1.”
 ### 3.1.1. How the insight was generated
 To explore the relationship between gender and student academic performance, a PivotTable was created in Excel. 
 + ***Gender*** was placed in the Rows area.
-+ The average of ***writing_score, reading_score_, and _math_score*** were placed in the Values area.
++ The average of ***writing_score, reading_score, and math_score*** were placed in the Values area.
 
 <img width="216" height="290" alt="image" src="https://github.com/user-attachments/assets/4880c235-7899-4cc2-b7a8-c44503bee72f" />
 
