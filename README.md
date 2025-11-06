@@ -4,7 +4,7 @@ The Student Performance dataset contains information about students’ academic 
 
 <img width="600" height="250" alt="image" src="https://github.com/user-attachments/assets/ce929410-571f-4543-acd0-e16f4d0d15d1" />
 
-Table 1: Data description
+_Table 1: Data description_
 
 
 The dataset features variables such as ***gender, race/ethnicity, parental level of education, and students’ scores in math, reading, and writing***. These variables allow for the examination of how demographic and family background factors relate to academic achievement.
@@ -20,14 +20,14 @@ All major columns including ***gender, race_ethnicity, parental_level_of_educati
 
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/9048e55f-6cdf-4f77-b612-e8c64a4012a1" />
 
-Figure 1. Columns Selected for Duplicate Checking
+_Figure 1. Columns Selected for Duplicate Checking_
 
 As shown in the process,  with ***203 raw rows***, ***3 duplicate rows*** were found and removed, resulting in ***199 unique*** observations. This step helps maintain data integrity and prevents double-counting, which could otherwise bias the statistical results and insights.
 
 
 <img width="360" height="179" alt="image" src="https://github.com/user-attachments/assets/83d73646-5f7b-49b1-a604-8711ccb54980" />
 
-Figure 2. Summary of Duplicate Removal Results
+_Figure 2. Summary of Duplicate Removal Results_
 
 ## 2.2. Handling Missing Data
 
@@ -36,11 +36,11 @@ Missing values were identified in two columns: ***parental_level_of_education***
 
 <img width="961" height="109" alt="image" src="https://github.com/user-attachments/assets/e15292b7-cf3a-4361-8f3e-172f0b662714" />
 
-Figure 3. Identifying Blank Values in Average Score Columns
+_Figure 3. Identifying Blank Values in Average Score Columns_
 
 <img width="958" height="73" alt="image" src="https://github.com/user-attachments/assets/3d206b20-8e22-448c-922e-75ba706e5fb3" />
 
-Figure 4: Identifying Blank Values in Parental Education Columns
+_Figure 4: Identifying Blank Values in Parental Education Columns_
 
 ### 2.2.1. Imputing Average Score
 
@@ -50,19 +50,19 @@ The formula used was: <img width="300" height="150" alt="image" src="https://git
 
 <img width="500" height="150" alt="image" src="https://github.com/user-attachments/assets/807e0934-5adf-4c7b-8335-4a75bd1ce5bd" />
 
-Figure 5. Recalculating Missing Average Score Using Excel Formula
+_Figure 5. Recalculating Missing Average Score Using Excel Formula_
 
-This method was chosen because ***average_score*** is a derived variable that depends directly on existing subject scores. Recalculating missing values ensures accuracy and internal consistency, as it relies on already available, valid data rather than estimation or deletion. After this process, no missing values remained in the ***average_score*** column.
+> This method was chosen because ***average_score*** is a derived variable that depends directly on existing subject scores. Recalculating missing values ensures accuracy and internal consistency, as it relies on already available, valid data rather than estimation or deletion. After this process, no missing values remained in the ***average_score*** column.
 
 ### 2.2.2. Imputing Parental Education
 
 To determine appropriate values for the missing entries in the ***parental_level_of_education*** column, a PivotTable was created in Excel to analyze the frequency of each education level within each race/ethnicity group.
 
-As shown in Figure 6, the data range ***A1:H200*** from the cleaned dataset was selected, and the PivotTable was inserted through the Insert → PivotTable function.
+As shown in _Figure 6_, the data range ***A1:H200*** from the cleaned dataset was selected, and the PivotTable was inserted through the Insert → PivotTable function.
 
 <img width="434" height="282" alt="image" src="https://github.com/user-attachments/assets/aab4da7c-073d-4041-9125-3e7367689419" />
 
-Figure 6. Selecting Data Range for PivotTable Creation in Excel
+_Figure 6. Selecting Data Range for PivotTable Creation in Excel_
 
 In the PivotTable field settings:
 + ***Race_ethnicity*** was placed in the Rows area.
@@ -71,7 +71,7 @@ In the PivotTable field settings:
 
 <img width="269" height="310" alt="image" src="https://github.com/user-attachments/assets/80936c1a-b3d3-49cf-bf57-1cc026e5cd3f" />
 
-Figure 7. PivotTable Field Settings for Analyzing Parental Education by Ethnicity
+_Figure 7. PivotTable Field Settings for Analyzing Parental Education by Ethnicity_
 
 The resulting PivotTable displayed the frequency of each education level across all ethnic groups. From this analysis, it was observed that:
 + **Group A** had associate’s degree as the most common education level.
@@ -79,14 +79,14 @@ The resulting PivotTable displayed the frequency of each education level across 
 
 <img width="898" height="175" alt="image" src="https://github.com/user-attachments/assets/f3d80b7a-92d4-4c3e-b87f-9ffb3035862a" />
 
-Figure 8. Frequency of Parental Education Levels by Race/Ethnicity Group
+_Figure 8. Frequency of Parental Education Levels by Race/Ethnicity Group_
 
 Thus, the two missing values were imputed accordingly:
 + ***Group A → associate’s degree***
 + ***Group D → some college***
 
-This method was selected because This method was selected because ***parental_level_of_education*** is a categorical variable, making mode imputation the most suitable approach.
-Using the most frequent category within each ethnic group (conditional mode) preserves both the data’s distribution and the relationship between demographic variables, ensuring realistic and unbiased replacements.
+> This method was selected because This method was selected because ***parental_level_of_education*** is a categorical variable, making mode imputation the most suitable approach.
+> Using the most frequent category within each ethnic group (conditional mode) preserves both the data’s distribution and the relationship between demographic variables, ensuring realistic and unbiased replacements.
 
 # 3.  Descriptive Statistics
 ## 3.1. Insight 1: Gender-Based Differences in Subject Performance
@@ -98,13 +98,14 @@ To explore the relationship between gender and student academic performance, a P
 
 <img width="216" height="290" alt="image" src="https://github.com/user-attachments/assets/4880c235-7899-4cc2-b7a8-c44503bee72f" />
 
-Figure 9. PivotTable Field Settings for Gender-Based Performance Analysis
+_Figure 9. PivotTable Field Settings for Gender-Based Performance Analysis_
 
 ### 3.1.2. Results and Interpretation
 
-<img width="509" height="401" alt="image" src="https://github.com/user-attachments/assets/a3ca2182-4f1a-4f4b-b252-552a5d37f1fa" />
+<img width="580" height="383" alt="image" src="https://github.com/user-attachments/assets/f5c80374-73e2-47de-b434-9db0fff118ca" />
 
-Figure 10. Average Subject Scores by Gender
+
+_Figure 10. Average Subject Scores by Gender_
 
 ✍🏻**Reason and Observation**
 + The analysis of average writing, reading, and math scores by gender shows clear performance differences between the two groups (coded as 0 and 1).
@@ -124,13 +125,14 @@ To explore the relationship between parental education and student academic perf
 
 <img width="216" height="283" alt="image" src="https://github.com/user-attachments/assets/53807fce-5801-4475-a642-48760b573ebb" />
 
-Figure 11. PivotTable Field Settings for Parental Education Analysis
+_Figure 11. PivotTable Field Settings for Parental Education Analysis_
 
 ### 3.2.2. Results and Interpretation
 
-<img width="1248" height="472" alt="image" src="https://github.com/user-attachments/assets/06814dbe-923d-4d98-8c63-b8694a243bc0" />
+<img width="768" height="317" alt="image" src="https://github.com/user-attachments/assets/a724f07a-53dd-4fc5-8127-51ed0588c4c4" />
 
-Figure 12. Average Student Score by Parental Education Level
+
+_Figure 12. Average Student Score by Parental Education Level_
 
 ✍🏻**Reason and Observation**
 + This insight investigates how parents’ education levels relate to their children’s academic performance.
