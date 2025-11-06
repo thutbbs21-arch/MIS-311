@@ -1,13 +1,13 @@
 # 1. Data Overview 
 
-The Student Performance dataset contains information about students’ academic outcomes and background characteristics that may influence their performance. It includes 203 rows and 8 columns, with each row representing an individual student.
+The Student Performance dataset contains information about students’ academic outcomes and background characteristics that may influence their performance. It includes ***203 rows*** and ***8 columns***, with each row representing an individual student.
 
 <img width="600" height="250" alt="image" src="https://github.com/user-attachments/assets/ce929410-571f-4543-acd0-e16f4d0d15d1" />
 
 Table 1: Data description
 
 
-The dataset features variables such as gender, race/ethnicity, parental level of education, and students’ scores in math, reading, and writing. These variables allow for the examination of how demographic and family background factors relate to academic achievement.
+The dataset features variables such as ***gender, race/ethnicity, parental level of education, and students’ scores in math, reading, and writing***. These variables allow for the examination of how demographic and family background factors relate to academic achievement.
 
 Overall, the dataset is widely used in educational analytics to explore performance patterns, identify potential learning gaps, and support evidence-based strategies aimed at improving student outcomes.
 
@@ -15,14 +15,14 @@ Overall, the dataset is widely used in educational analytics to explore performa
 
 ## 2.1. Removal of Duplicate Records
 
-To ensure the accuracy and reliability of the dataset, duplicate entries were checked and removed using Excel’s “Remove Duplicates” function.
-All major columns including gender, race_ethnicity, parental_level_of_education, math_score, and reading_score were selected to detect identical records.
+To ensure the accuracy and reliability of the dataset, duplicate entries were checked and removed using ***“Remove Duplicates”*** function.
+All major columns including ***gender, race_ethnicity, parental_level_of_education, math_score, and reading_score*** were selected to detect identical records.
 
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/9048e55f-6cdf-4f77-b612-e8c64a4012a1" />
 
 Figure 1. Columns Selected for Duplicate Checking
 
-As shown in the process, 3 duplicate rows were found and removed, resulting in 199 unique observations. This step helps maintain data integrity and prevents double-counting, which could otherwise bias the statistical results and insights.
+As shown in the process, ***3 duplicate rows*** were found and removed, resulting in ***199 unique*** observations. This step helps maintain data integrity and prevents double-counting, which could otherwise bias the statistical results and insights.
 
 
 <img width="360" height="179" alt="image" src="https://github.com/user-attachments/assets/83d73646-5f7b-49b1-a604-8711ccb54980" />
@@ -31,7 +31,7 @@ Figure 2. Summary of Duplicate Removal Results
 
 ## 2.2. Handling Missing Data
 
-Missing values were identified in two columns: parental_level_of_education (categorical) and average_score (numerical). The blanks were detected using the Filter tool in Excel, which displayed two rows with missing values in both columns. 
+Missing values were identified in two columns: ***parental_level_of_education*** (categorical) and ***average_score***  (numerical). The blanks were detected using the Filter tool in Excel, which displayed two rows with missing values in both columns. 
 
 
 <img width="961" height="109" alt="image" src="https://github.com/user-attachments/assets/e15292b7-cf3a-4361-8f3e-172f0b662714" />
@@ -44,7 +44,7 @@ Figure 4: Identifying Blank Values in Parental Education Columns
 
 ### 2.2.1. Fill Average Score
 
-For the variable average_score, some missing values were found due to incomplete data entry. To maintain data consistency, the missing values were recalculated using Excel by dividing the total score by 3 (since each student’s total score represents the sum of three subjects: math, reading, and writing).
+For the variable ***average_score***, some missing values were found due to incomplete data entry. To maintain data consistency, the missing values were recalculated using Excel by dividing the total score by 3 (since each student’s total score represents the sum of three subjects: ***math, reading, and writing***).
 
 The formula used was: <img width="300" height="150" alt="image" src="https://github.com/user-attachments/assets/d4fc0210-018a-4367-9fdc-d28e8df3d7d3" />
 
@@ -53,22 +53,22 @@ The formula used was: <img width="300" height="150" alt="image" src="https://git
 Figure 5. Recalculating Missing Average Score Using Excel Formula
 
 As shown in Figure 5, this calculation ensured that each student record had a valid and consistent average score derived directly from their subject results.
-After this process, no missing values remained in the average_score column.
+After this process, no missing values remained in the ***average_score*** column.
 
-### 2.2.2.Fill Parental Education
+### 2.2.2. Fill Parental Education
 
-To determine appropriate values for the missing entries in the parental_level_of_education column, a PivotTable was created in Excel to analyze the frequency of each education level within each race/ethnicity group.
+To determine appropriate values for the missing entries in the ***parental_level_of_education*** column, a PivotTable was created in Excel to analyze the frequency of each education level within each race/ethnicity group.
 
-As shown in Figure 6, the data range A1:H200 from the cleaned dataset was selected, and the PivotTable was inserted through the Insert → PivotTable function.
+As shown in Figure 6, the data range ***A1:H200*** from the cleaned dataset was selected, and the PivotTable was inserted through the Insert → PivotTable function.
 
 <img width="434" height="282" alt="image" src="https://github.com/user-attachments/assets/aab4da7c-073d-4041-9125-3e7367689419" />
 
 Figure 6. Selecting Data Range for PivotTable Creation in Excel
 
 In the PivotTable field settings:
-+ Race_ethnicity was placed in the Rows area.
-+ Parental_level_of_education was placed in the Columns area.
-+ The values area was set to Count of parental_level_of_education.
++ ***Race_ethnicity*** was placed in the Rows area.
++ ***Parental_level_of_education*** was placed in the Columns area.
++ The values area was set to Count of ***parental_level_of_education***.
 
 <img width="269" height="310" alt="image" src="https://github.com/user-attachments/assets/80936c1a-b3d3-49cf-bf57-1cc026e5cd3f" />
 
@@ -83,31 +83,31 @@ The resulting PivotTable displayed the frequency of each education level across 
 Figure 8. Frequency of Parental Education Levels by Race/Ethnicity Group
 
 Thus, the two missing values were imputed accordingly:
-+ Group A → associate’s degree
-+ Group D → some college
++ ***Group A → associate’s degree***
++ ***Group D → some college***
 # 3.  Descriptive Statistics
 ## 3.1. Insight 1: Gender-Based Differences in Subject Performance
 ### 3.1.1. How the insight was generated
 To explore the relationship between gender and student academic performance, a PivotTable was created in Excel. 
-+ Gender was placed in the Rows area.
-+ The average of writing_score, reading_score, and math_score were placed in the Values area.
++ ***Gender*** was placed in the Rows area.
++ The average of ***writing_score, reading_score_, and _math_score*** were placed in the Values area.
 
 <img width="216" height="290" alt="image" src="https://github.com/user-attachments/assets/4880c235-7899-4cc2-b7a8-c44503bee72f" />
 
 Figure 9. PivotTable Field Settings for Gender-Based Performance Analysis
 
-### 3.2.2. Results and Interpretation
+### 3.1.2. Results and Interpretation
 
 <img width="509" height="401" alt="image" src="https://github.com/user-attachments/assets/a3ca2182-4f1a-4f4b-b252-552a5d37f1fa" />
 
 Figure 10. Average Subject Scores by Gender
 
-Reason and Observation
+✍🏻**Reason and Observation**
 + The analysis of average writing, reading, and math scores by gender shows clear performance differences between the two groups (coded as 0 and 1).
 + Group 0 achieved higher scores in writing (72) and reading (72), while group 1 performed slightly better in math (65).
 + This pattern suggests that one gender may have stronger verbal skills, whereas the other demonstrates relatively stronger quantitative ability.
 
-Interpretation and Educational Implication
+✍🏻**Interpretation and Educational Implication**
 + The difference could result from learning preferences, confidence levels, or social expectations that shape how students engage with each subject.
 + From an educational perspective, this finding highlights the need for balanced teaching approaches that strengthen weaker subject areas for each gender.
 + For instance, teachers might use gender-inclusive learning materials or targeted support programs to improve both literacy and numeracy outcomes.
@@ -115,8 +115,8 @@ Interpretation and Educational Implication
 ## 3.2. Insight 2: Impact of Parental Education on Student Performance
 ### 3.2.1. How the Insight Was Generated
 To explore the relationship between parental education and student academic performance, a PivotTable was created in Excel.
-+ Parental level of education was placed in the Rows area.
-+ Average of average_score was placed in the Values area.
++ ***Parental_level_of_education*** was placed in the Rows area.
++ Average of ***average_score*** was placed in the Values area.
 
 <img width="216" height="283" alt="image" src="https://github.com/user-attachments/assets/53807fce-5801-4475-a642-48760b573ebb" />
 
@@ -128,10 +128,10 @@ Figure 11. PivotTable Field Settings for Parental Education Analysis
 
 Figure 12. Average Student Score by Parental Education Level
 
-Reason and Observation
+✍🏻**Reason and Observation**
 + This insight investigates how parents’ education levels relate to their children’s academic performance.
 + The results show a positive correlation: students whose parents have a bachelor’s or master’s degree achieve average scores around 72–73, whereas those with high school or lower backgrounds score around 60–62.
 
-Interpretation and Educational Implication
+✍🏻**Interpretation and Educational Implication**
 + The pattern suggests that higher parental education provides students with greater academic support, learning resources, and motivation at home. This relationship emphasizes the importance of family engagement in education.
 + Schools can apply this insight by developing parent–teacher partnerships or community learning programs that guide parents on how to support their children’s learning, especially for families with lower educational backgrounds.
