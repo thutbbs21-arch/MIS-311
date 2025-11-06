@@ -2,7 +2,7 @@
 
 The Student Performance dataset contains information about students’ academic outcomes and background characteristics that may influence their performance. It includes 203 rows and 8 columns, with each row representing an individual student.
 
-<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/ce929410-571f-4543-acd0-e16f4d0d15d1" />
+<img width="600" height="250" alt="image" src="https://github.com/user-attachments/assets/ce929410-571f-4543-acd0-e16f4d0d15d1" />
 
 Table 1: Data description
 
@@ -111,3 +111,27 @@ Interpretation and Educational Implication
 + The difference could result from learning preferences, confidence levels, or social expectations that shape how students engage with each subject.
 + From an educational perspective, this finding highlights the need for balanced teaching approaches that strengthen weaker subject areas for each gender.
 + For instance, teachers might use gender-inclusive learning materials or targeted support programs to improve both literacy and numeracy outcomes.
+
+## 3.2. Insight 2: Impact of Parental Education on Student Performance
+### 3.2.1. How the Insight Was Generated
+To explore the relationship between parental education and student academic performance, a PivotTable was created in Excel.
++ Parental level of education was placed in the Rows area.
++ Average of average_score was placed in the Values area.
+
+<img width="216" height="283" alt="image" src="https://github.com/user-attachments/assets/53807fce-5801-4475-a642-48760b573ebb" />
+
+Figure 11. PivotTable Field Settings for Parental Education Analysis
+
+### 3.2.2. Results and Interpretation
+
+<img width="1248" height="472" alt="image" src="https://github.com/user-attachments/assets/06814dbe-923d-4d98-8c63-b8694a243bc0" />
+
+Figure 12. Average Student Score by Parental Education Level
+
+Reason and Observation
++ This insight investigates how parents’ education levels relate to their children’s academic performance.
++ The results show a positive correlation: students whose parents have a bachelor’s or master’s degree achieve average scores around 72–73, whereas those with high school or lower backgrounds score around 60–62.
+
+Interpretation and Educational Implication
++ The pattern suggests that higher parental education provides students with greater academic support, learning resources, and motivation at home. This relationship emphasizes the importance of family engagement in education.
++ Schools can apply this insight by developing parent–teacher partnerships or community learning programs that guide parents on how to support their children’s learning, especially for families with lower educational backgrounds.
